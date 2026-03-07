@@ -26,8 +26,7 @@ class AntrophicApiConnector(apiKey: String, val systemPrompt: String) {
             .addUserMessage(message)
             .build()
 
-        val answer: String = extractMessage(client.messages().create(params));
-        messages.add(message)
-        return OutputFormat(answer, messages)
+        val message: Message = client.messages().create(params)
+        return OutputFormat(extractMessage(message), messages)
     }
 }

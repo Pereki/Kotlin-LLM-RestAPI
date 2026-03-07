@@ -27,5 +27,4 @@ dependencies {
     implementation("com.anthropic:anthropic-java:2.15.0")
     implementation("io.ktor:ktor-server-content-negotiation:3.4.1")
     implementation("io.ktor:ktor-serialization-kotlinx-json:3.4.1")
-    implementation("io.ktor:ktor-server-cors")
 }
