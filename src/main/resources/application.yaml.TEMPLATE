@@ -8,3 +8,5 @@ ktor:
 antrophic:
     api:
         key:
+        system:
+            prompt:
