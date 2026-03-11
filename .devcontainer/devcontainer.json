@@ -1,0 +1,28 @@
+﻿{
+  "name": "Kotlin LLM REST API Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "runArgs": ["--init"],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "fwcd.kotlin",
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-gradle",
+        "ms-azuretools.vscode-docker"
+      ]
+    } 
+  },
+  "forwardPorts": [8080],
+  "postCreateCommand": "if [ -f ./gradlew ]; then chmod +x ./gradlew && ./gradlew --no-daemon build || true; fi",
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=gradle-cache,target=/home/vscode/.gradle,type=volume"
+  ]
+}
